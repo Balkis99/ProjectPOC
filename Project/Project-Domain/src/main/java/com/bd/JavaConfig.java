@@ -19,9 +19,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.bd.service.AdvancementService;
+import com.bd.service.ProjetService;
 import com.bd.service.TaskService;
 import com.bd.service.implement.AdvancementServiceImpl;
+import com.bd.service.implement.ProjetServiceImp;
 import com.bd.service.implement.TaskServiceImplement;
+
 
 
 
@@ -80,6 +83,10 @@ public class JavaConfig{
    public TaskService taskService(){
       return new TaskServiceImplement();
    }
+   
+   @Bean
+   public ProjetService ProjetServiceImp(){
+  	  return new ProjetServiceImp();}
  
  
       Properties additionalProperties() {
