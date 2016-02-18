@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="Project-Domain">
+	<class>com.bd.entities.User</class>
+	<class>com.bd.entities.Permission</class>
+	<class>com.bd.entities.Privilege</class>
+    <class>com.bd.entities.Role</class>
+	<class>com.bd.entities.Task</class>
+	<class>com.bd.entities.Administration</class>
+	 <class>com.bd.entities.Advancement</class>
+	<class>com.bd.entities.Projet</class>
+	<class>com.bd.entities.Todo</class>
+	</persistence-unit>
+</persistence>
