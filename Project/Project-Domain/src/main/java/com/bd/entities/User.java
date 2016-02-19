@@ -10,15 +10,13 @@ import javax.persistence.*;
  
 public class User implements Serializable  {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	private String pwd;
-	private String login;	
+	private String login;
 	private String name;
 	
 	@Column(name = "last_name")
@@ -34,8 +32,8 @@ public class User implements Serializable  {
 	@ManyToMany(cascade={CascadeType.MERGE,CascadeType.PERSIST})
 	private List<Projet> projets;
 	
-	@OneToMany(mappedBy="user",cascade={CascadeType.REMOVE})
-	private List<Role> roles;
+	@ManyToOne(cascade={CascadeType.PERSIST,CascadeType.MERGE})
+	private Role role;
 	
 	
 	@OneToMany(mappedBy="user",cascade={CascadeType.REMOVE})
@@ -139,14 +137,14 @@ public class User implements Serializable  {
 		this.projets = projets;
 	}
 
-
-	public List<Role> getRoles() {
-		return roles;
+	
+	public Role getRole() {
+		return role;
 	}
 
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+	public void setRole(Role role) {
+		this.role = role;
 	}
 
 
@@ -172,7 +170,6 @@ public class User implements Serializable  {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	

@@ -19,11 +19,15 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.bd.service.AdvancementService;
+import com.bd.service.PermissionService;
 import com.bd.service.ProjetService;
+import com.bd.service.RoleService;
 import com.bd.service.TaskService;
 import com.bd.service.implement.AdvancementServiceImpl;
 import com.bd.service.implement.ProjetServiceImp;
 import com.bd.service.implement.TaskServiceImplement;
+import com.bd.service.implement.RoleServiceImplementation;
+import com.bd.service.implement.PermissionServiceImplementation;
 
 
 
@@ -87,6 +91,16 @@ public class JavaConfig{
    @Bean
    public ProjetService ProjetServiceImp(){
   	  return new ProjetServiceImp();}
+   
+   @Bean
+   public RoleService roleService() {
+	   return new RoleServiceImplementation();
+   }
+   
+   @Bean
+   public PermissionService permissionService() {
+	   return new PermissionServiceImplementation();
+   }
  
  
       Properties additionalProperties() {
