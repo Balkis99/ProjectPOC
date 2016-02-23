@@ -13,4 +13,6 @@ public interface ProjetService {
      List<Projet> findAllProjets();
      Projet findProjetById(Integer idProjet);
      List<Projet> findAllProjetsByUser(User user);
+     List<Projet> FindProjetByName(String name);
+     Boolean AssignProjetToUser(Projet projet,User user);
 }

@@ -11,14 +11,15 @@ import com.bd.entities.Projet;
 import com.bd.service.ProjetService;
 
 public class TestProjet {
-
+	ApplicationContext ctx1 =new AnnotationConfigApplicationContext(JavaConfig.class) ;
+	 ProjetService projetService = (ProjetService) ctx1.getBean("ProjetServiceImp");
 	@Test
 	public void _1TestAddProjet() {
-		ApplicationContext ctx1 =new AnnotationConfigApplicationContext(JavaConfig.class) ;
+		
 		
 		//Recuperation bean Majeur a travers interface 
 		
-	 ProjetService projetService = (ProjetService) ctx1.getBean("ProjetServiceImp");
+	// ProjetService projetService = (ProjetService) ctx1.getBean("ProjetServiceImp");
 		
 		//Creation projet
      Projet projet = new Projet();
@@ -62,4 +63,12 @@ public class TestProjet {
 		//ProjetService projetService = (ProjetService) ctx1.getBean("ProjetServiceImp");
 		
 	//}
+	@Test
+	public void _5TestFindProjetByName(){
+		
+	
+		assertNotNull( projetService.FindProjetByName("pfe"));
+		
+		
+	}
 }

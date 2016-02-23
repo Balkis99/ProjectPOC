@@ -34,11 +34,9 @@ import com.bd.service.implement.PermissionServiceImplementation;
 
 @Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = {  "com.bd" })
+@ComponentScan(basePackages = {  "com.bd" })
 
-@EnableJpaRepositories
-@ComponentScan(basePackages = {
-        "net.petrikainulainen.springdata.jpa.todo"
-})
 
 public class JavaConfig{
  

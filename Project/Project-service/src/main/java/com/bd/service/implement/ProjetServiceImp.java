@@ -1,5 +1,6 @@
 package com.bd.service.implement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,19 @@ public class ProjetServiceImp implements ProjetService{
 	}
 
 	public List<Projet> findAllProjetsByUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Projet> FindProjetByName(String name) {
+        List<Projet> projets =new ArrayList<Projet>();
+		
+		projets = projetRepository.FindProjetByName(name);
+		return projets;
+		
+	}
+
+	public Boolean AssignProjetToUser(Projet projet, User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
